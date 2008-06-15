@@ -1,0 +1,62 @@
+<!-- 
+take the style block out.  this is duplicated in users/_data.html.erb
+without this, the user group selection is just no good
+-->
+<style>
+.checklist{
+  overflow: auto;
+  border: 1px solid #ccc;
+  list-style: none;
+  height: 300px;
+  text-align: left;
+  list-style: none;
+  margin-left: 12px;
+}
+
+.checklist li{
+  padding-left: 6px;
+}
+
+li.even_checked,
+li.even{
+  background: #DFDFDF;
+}
+
+li.even_checked,
+li.odd_checked{
+  color: red;
+}
+</style>
+
+<p>
+  <b>First name</b><br />
+  <%= profile_first_name_value %>
+</p>
+<p>
+  <b>Last name</b><br />
+  <%= profile_last_name_value %>
+</p>
+<p>
+  <b>Email</b><br />
+  <%= profile_email_value %>
+</p>
+<p>
+	<b><span>L</span>ogin</b><br />
+  <%= user_login_value %>
+</p>
+
+<% unless @action_name == "show" -%>
+	<p id="password">
+		<% if @user.new_record? %>
+			<%= render :partial => "password" %>
+		<% else %>
+			<a href="#" onclick="change_password()">Change Password</a><br/>
+		<% end %>
+	</p>
+<% end -%>
+
+<p>
+  <b>User Groups</b><br />
+  <%= user_user_groups_value %>
+</p>
+
