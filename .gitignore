@@ -5,6 +5,9 @@ public/cache/**/*
 doc/api
 doc/app
 doc/plugins
-nbproject/**/*
+nbproject/
+nbproject/project.properties
+nbproject/project.xml
+nbproject/private/rake-t.txt
 config/database.yml
 config/initializers/site_keys.rb
